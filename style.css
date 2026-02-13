@@ -1,54 +1,54 @@
 body {
-    font-family: Arial;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3, #65d6ce, #6a89cc);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-    text-align: center;
-    color: white;
-}
-
-@keyframes gradient {
-    0% {background-position: 0%;}
-    50% {background-position: 100%;}
-    100% {background-position: 0%;}
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg,#4361ee,#4cc9f0,#7209b7);
+  color: white;
+  text-align: center;
+  overflow: hidden;
 }
 
 .container {
-    width: 360px;
-    margin: auto;
-    margin-top: 20px;
+  margin-top: 60px;
 }
 
-.card {
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(10px);
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
-}
-
-.timer-card h2 {
-    font-size: 42px;
-    text-shadow: 0 0 10px #fff;
+#timer {
+  font-size: 60px;
+  margin: 20px;
 }
 
 button {
-    margin: 5px;
-    padding: 10px 14px;
-    border: none;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #333;
-    cursor: pointer;
-    font-weight: bold;
+  padding: 12px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #f72585;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover {
-    background: #ffeaa7;
+  background: #b5179e;
 }
 
-canvas {
-    background: white;
-    border-radius: 10px;
+.ai {
+  margin-top: 25px;
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+/* Cursor glow */
+.cursor {
+  width: 18px;
+  height: 18px;
+  background: #f72585;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 20px #f72585;
+  transform: translate(-50%, -50%);
 }
