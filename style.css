@@ -33,12 +33,12 @@ button:hover {
 
 .ai {
   margin-top: 25px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.1);
   padding: 15px;
-  width: 320px;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 /* Cursor glow */
