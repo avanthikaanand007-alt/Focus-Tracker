@@ -2,44 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI Adaptive Focus Tracker</title>
+<title>AI Focus Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<div class="cursor-glow"></div>
 
-    <h1>🌈 AI Adaptive Focus Tracker</h1>
+<div class="app">
 
-    <!-- TIMER -->
-    <div class="card timer-card">
-        <h2 id="timer">00:00</h2>
-        <button onclick="startFocus()">Start</button>
-        <button onclick="stopFocus()">Stop</button>
-        <button onclick="takeBreak()">Break</button>
-    </div>
+<h1>AI Focus Tracker</h1>
 
-    <!-- ANALYTICS -->
-    <div class="card">
-        <h3>📊 Analytics</h3>
-        <p>Total Focus Today: <span id="totalTime">0</span> min</p>
-        <p>Sessions: <span id="sessions">0</span></p>
-        <p>Productivity Score: <span id="score">0</span>%</p>
-        <canvas id="chart" width="300" height="150"></canvas>
-    </div>
+<div class="card timer">
+  <div id="time">00:00</div>
+  <div class="buttons">
+    <button onclick="startFocus()">Start</button>
+    <button onclick="stopFocus()">Stop</button>
+    <button onclick="takeBreak()">Break</button>
+  </div>
+</div>
 
-    <!-- AI -->
-    <div class="card ai">
-        <h3>🤖 AI Suggestion</h3>
-        <p id="aiMessage">Start focusing to activate AI...</p>
-    </div>
+<div class="card stats">
+  <h3>Analytics</h3>
+  <p>Total Focus: <span id="total">0</span> min</p>
+  <p>Sessions: <span id="sessions">0</span></p>
+  <p>Average: <span id="avg">0</span> min</p>
+</div>
 
-    <!-- MOTIVATION -->
-    <div class="card motivation">
-        <h3>💡 Motivation</h3>
-        <p id="quote">Focus creates success.</p>
-    </div>
+<div class="card ai">
+  <h3>AI Coach</h3>
+  <p id="aiText">Finish a session to get AI feedback.</p>
+</div>
 
 </div>
 
