@@ -1,0 +1,54 @@
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #65d6ce, #6a89cc);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    text-align: center;
+    color: white;
+}
+
+@keyframes gradient {
+    0% {background-position: 0%;}
+    50% {background-position: 100%;}
+    100% {background-position: 0%;}
+}
+
+.container {
+    width: 360px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.timer-card h2 {
+    font-size: 42px;
+    text-shadow: 0 0 10px #fff;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ffeaa7;
+}
+
+canvas {
+    background: white;
+    border-radius: 10px;
+}
