@@ -1,117 +1,96 @@
-let sec = 0, min = 0;
-let running = false;
-let timer;
+/* 🔑 Put your GROQ API key here */
+const API_KEY = "PASTE_YOUR_KEY_HERE";
 
-let history = JSON.parse(localStorage.getItem("focusHistory")) || [];
-let totalFocus = history.reduce((a,b)=>a+b,0);
-let sessions = history.length;
+/* ---------------- TIMER ---------------- */
 
-updateUI();
+let sec = 0;
+let timer = null;
+let total = 0;
+let sessions = 0;
 
-function updateTimer() {
-    sec++;
-    if (sec === 60) { min++; sec = 0; }
-
-    document.getElementById("timer").innerText =
-        `${String(min).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
-
-    aiLearning();
+function start() {
+  if (!timer) {
+    timer = setInterval(() => {
+      sec++;
+      let m = Math.floor(sec / 60);
+      let s = sec % 60;
+      document.getElementById("timer").innerText =
+        `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+    }, 1000);
+  }
 }
 
-function startFocus() {
-    if (!running) {
-        running = true;
-        timer = setInterval(updateTimer,1000);
-        ai("Focus started 🚀 Blocking distractions...");
-    }
+function stop() {
+  clearInterval(timer);
+  timer = null;
+
+  let minutes = Math.floor(sec / 60);
+  total += minutes;
+  sessions++;
+
+  document.getElementById("total").innerText = total;
+  document.getElementById("sessions").innerText = sessions;
+
+  askAI(`User focused for ${minutes} minutes. Give short productivity feedback.`);
+  sec = 0;
+  document.getElementById("timer").innerText = "00:00";
 }
 
-function stopFocus() {
-    clearInterval(timer);
-    running = false;
-
-    history.push(min);
-    localStorage.setItem("focusHistory", JSON.stringify(history));
-
-    totalFocus += min;
-    sessions++;
-
-    sec = 0; min = 0;
-    document.getElementById("timer").innerText = "00:00";
-
-    ai("Session saved 🎉 Great work!");
-    motivation();
-    updateUI();
-    drawChart();
+function motivate() {
+  askAI("Give a short powerful one-line motivation to focus.");
 }
 
-function takeBreak() {
-    clearInterval(timer);
-    running = false;
-    ai("Break suggested ☕ Relax 5 mins");
-    vibrate();
-}
+/* ---------------- GROQ AI (FREE MODEL) ---------------- */
 
-function ai(msg) {
-    document.getElementById("aiMessage").innerText = msg;
-}
+async function askAI(prompt) {
+  document.getElementById("aiText").innerText = "Thinking...";
 
-function motivation() {
-    const quotes = [
-        "Consistency beats motivation.",
-        "You are improving every session.",
-        "Deep focus = Big success.",
-        "Keep pushing forward.",
-        "Your future self will thank you."
-    ];
-    document.getElementById("quote").innerText =
-        quotes[Math.floor(Math.random()*quotes.length)];
-}
-
-function vibrate() {
-    if (navigator.vibrate) navigator.vibrate(200);
-}
-
-function updateUI() {
-    document.getElementById("totalTime").innerText = totalFocus;
-    document.getElementById("sessions").innerText = sessions;
-
-    let score = sessions ? Math.min(100, Math.round(totalFocus/sessions * 2)) : 0;
-    document.getElementById("score").innerText = score;
-}
-
-function aiLearning() {
-    if (min === 20) {
-        ai("AI: You focus well for 20min. Suggest short break soon ☕");
-        vibrate();
-    }
-    if (min === 35) {
-        ai("AI: Focus dropping. Try easier task 📘");
-    }
-    if (min === predictBestTime()) {
-        ai("AI Prediction: Your ideal session length reached 🎯");
-    }
-}
-
-/* SIMPLE AI PREDICTION */
-function predictBestTime() {
-    if (history.length === 0) return 25;
-    let avg = history.reduce((a,b)=>a+b,0) / history.length;
-    return Math.round(avg);
-}
-
-/* CHART DRAW */
-function drawChart() {
-    let canvas = document.getElementById("chart");
-    let ctx = canvas.getContext("2d");
-    ctx.clearRect(0,0,300,150);
-
-    let max = Math.max(...history, 30);
-    history.slice(-10).forEach((val,i)=>{
-        let h = (val/max)*120;
-        ctx.fillStyle = `hsl(${i*35},80%,60%)`;
-        ctx.fillRect(i*28+10,140-h,20,h);
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + API_KEY
+      },
+      body: JSON.stringify({
+        model: "llama-3.1-8b-instant",   // ✅ FREE + FAST MODEL
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a smart AI focus coach helping users stay productive, avoid distractions, and stay motivated. Keep responses short."
+          },
+          {
+            role: "user",
+            content: prompt
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 100
+      })
     });
+
+    const data = await res.json();
+
+    if (data.choices && data.choices.length > 0) {
+      document.getElementById("aiText").innerText =
+        data.choices[0].message.content.trim();
+    } else {
+      document.getElementById("aiText").innerText =
+        "AI error: " + JSON.stringify(data);
+    }
+  } catch (err) {
+    document.getElementById("aiText").innerText =
+      "API Error / Internet issue / Wrong API key.";
+  }
 }
 
-drawChart();
+/* ---------------- CURSOR GLOW ---------------- */
+
+document.addEventListener("mousemove", e => {
+  const c = document.querySelector(".cursor");
+  if (c) {
+    c.style.left = e.clientX + "px";
+    c.style.top = e.clientY + "px";
+  }
+});
