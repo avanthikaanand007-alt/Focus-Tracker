@@ -2,24 +2,24 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [FOCUS TRACKER] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [HER HACK]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [AVANTHIKA ANAND] - [SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY]
+- Member 2: [MALAVIKA A] - [SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[AN AI FOCUS TRACKER THAT UNDERSTANDS YOUR FOCUS PATTERN AND HELPS YOU STAY PRODUCTIVE WITH PERSONNA]
 
 ### The Problem statement
-[What problem are you solving?]
+[]
 
 ### The Solution
 [How are you solving it?]
