@@ -5,36 +5,30 @@
 <title>AI Focus Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="cursor-glow"></div>
+<div class="cursor"></div>
 
-<div class="app">
+<div class="container">
+  <h1>🎯 AI Focus Tracker</h1>
 
-<h1>AI Focus Tracker</h1>
+  <div id="timer">00:00</div>
 
-<div class="card timer">
-  <div id="time">00:00</div>
   <div class="buttons">
-    <button onclick="startFocus()">Start</button>
-    <button onclick="stopFocus()">Stop</button>
-    <button onclick="takeBreak()">Break</button>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="motivate()">Motivate</button>
   </div>
-</div>
 
-<div class="card stats">
-  <h3>Analytics</h3>
-  <p>Total Focus: <span id="total">0</span> min</p>
-  <p>Sessions: <span id="sessions">0</span></p>
-  <p>Average: <span id="avg">0</span> min</p>
-</div>
+  <div class="stats">
+    <p>Total Focus: <span id="total">0</span> min</p>
+    <p>Sessions: <span id="sessions">0</span></p>
+  </div>
 
-<div class="card ai">
-  <h3>AI Coach</h3>
-  <p id="aiText">Finish a session to get AI feedback.</p>
-</div>
-
+  <div class="ai">
+    <h3>AI Coach</h3>
+    <p id="aiText">AI ready...</p>
+  </div>
 </div>
 
 <script src="script.js"></script>
