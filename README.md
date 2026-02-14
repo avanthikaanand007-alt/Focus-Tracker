@@ -13,16 +13,18 @@
 - Member 2: [MALAVIKA A] - [SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY]
 
 ### Hosted Project Link
-[mention your project hosted link here]
+[focus-tracker-rouge.vercel.app]
 
 ### Project Description
-[AN AI FOCUS TRACKER THAT UNDERSTANDS YOUR FOCUS PATTERN AND HELPS YOU STAY PRODUCTIVE WITH PERSONNA]
+[AN AI FOCUS TRACKER THAT UNDERSTANDS YOUR FOCUS PATTERN AND HELPS YOU STAY PRODUCTIVE WITH PERSONNAlized insights]
 
 ### The Problem statement
-[]
+[Many students and professionals struggle to stay focused due to constant digital distractions such as social media, multitasking, and notifications. This reduces productivity and makes it difficult to maintain deep concentration for long periods. Existing productivity tools are often complex, require internet connectivity, or do not provide meaningful feedback. There is a need for a simple, interactive, and intelligent focus tracking system that helps users monitor their focus time, stay motivated, and build disciplined work habits.]
 
 ### The Solution
-[How are you solving it?]
+[The solution is a Smart Focus Tracker web application that helps users monitor how long they focus and provides instant feedback when a session ends. The system tracks focus time in real time and, when the user stops a session, it displays how long they focused along with a motivational message and a focus improvement suggestion.
+
+The system works completely offline using a predefined intelligent response system that simulates adaptive behavior. This makes the application fast, reliable, and secure while still providing meaningful productivity support.]
 
 ---
 
@@ -31,25 +33,25 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [HTML, CSS, JavaScript]
+- Frameworks used: [none]
+- Libraries used: [none]
+- Tools used: [VS Code, Git, GitHub, Web Browser]
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- Main components: [not applicable]
+- Specifications: [not applicable]
+- Tools required: [not applicable]
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [Real time focus timer that tracks how long the user works]
+- Feature 2: [Session feedback showing total focus duration when the user stops]
+- Feature 3: [Random motivational quotes to encourage productivity]
+- Feature 4: [Random focus improvement suggestions to help build better focus habits]
 
 ---
 
@@ -59,18 +61,20 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+[No installation required. This is a pure frontend web project.
+]
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+[Open index.html in any modern web browser.
+]
 ```
 
 ### For Hardware:
 
 #### Components Required
-[List all components needed with specifications]
+[]
 
 #### Circuit Setup
 [Explain how to set up the circuit]
@@ -82,27 +86,26 @@ List the key features of your project:
 ### For Software:
 
 #### Screenshots (Add at least 3)
+<img width="689" height="760" alt="image" src="https://github.com/user-attachments/assets/06e5141c-87d7-40d6-80b0-ce4b69ea0cbd" />
+This is after ending a session
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+<img width="552" height="750" alt="image" src="https://github.com/user-attachments/assets/5c7c5177-0cb3-4ca5-bd0f-b8ea0e3ea477" />
+This is after the ending of another session
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+<img width="525" height="682" alt="image" src="https://github.com/user-attachments/assets/eae5aec6-066d-4431-a24c-00d0b7e7eaef" />
+This is motivating
 
 #### Diagrams
 
 **System Architecture:**
 
 ![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
+The system consists of a frontend web interface built using HTML, CSS, and JavaScript. The user interacts with the timer controls. JavaScript handles time tracking, session calculation, and random generation of motivational and focus guidance messages. No backend or external services are required.
 
 **Application Workflow:**
 
 ![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+User starts a session → Timer counts focus time → User stops session → System calculates focus duration → Displays focus message → Shows random instruction and motivation → User resets or starts new session
 
 ---
 
@@ -374,37 +377,30 @@ python script.py -v --format json data.json
 
 If you used AI tools during development, document them here for transparency:
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+**Tool Used:** [ ChatGPT]
 
-**Purpose:** [What you used it for]
+**Purpose:** [Used for styling css]
 - Example: "Generated boilerplate React components"
 - Example: "Debugging assistance for async functions"
 - Example: "Code review and optimization suggestions"
 
 **Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
+- "Suggest an ideal ui using css and also write the backend"
 
-**Percentage of AI-generated code:** [Approximately X%]
+
+**Percentage of AI-generated code:** 60%]
 
 **Human Contributions:**
 - Architecture design and planning
-- Custom business logic implementation
 - Integration and testing
 - UI/UX design decisions
 
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
-
----
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- [AVANTHIKA ANAND]: [Design,coding,testing,documentation]
+- [MALAVIKA A]: [Frontend development, core logic implementation, UI design, testing, documentation]
 
----
 
 ## License
 
